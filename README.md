@@ -10,7 +10,7 @@ Running the image
 
 Start your image binding the external port 80:
 
-	sudo docker --name xvwa run -d -p 80:80 tuxotron/xvwa
+	sudo docker run --name xvwa -d -p 80:80 tuxotron/xvwa
 
 Open your browser and go to:
 
