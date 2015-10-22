@@ -1,5 +1,5 @@
 FROM ubuntu:trusty
-MAINTAINER Fernando Mayo <fernando@tutum.co>, Feng Honglin <hfeng@tutum.co>
+MAINTAINER tuxotron <tuxotron@gmail.com>
 
 # Install packages
 ENV DEBIAN_FRONTEND noninteractive
@@ -20,16 +20,15 @@ ADD supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
 RUN rm -rf /var/lib/mysql/*
 
 # Add MySQL utils
-ADD create_mysql_admin_user.sh /create_mysql_admin_user.sh
+ADD create_xvwa_db.sh /create_xvwa_db.sh
 RUN chmod 755 /*.sh
 
 # config to enable .htaccess
 ADD apache_default /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 
-# Configure /app folder with sample app
-RUN git clone https://github.com/fermayo/hello-world-lamp.git /app
-RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
+RUN rm -fr /var/www/html
+RUN git clone https://github.com/s4n7h0/xvwa /var/www/html/xvwa
 
 #Enviornment variables to configure php
 ENV PHP_UPLOAD_MAX_FILESIZE 10M
