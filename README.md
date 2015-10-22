@@ -14,7 +14,7 @@ Start your image binding the external port 80:
 
 Open your browser and go to:
 
-	curl http://localhost/xvwa
+	http://localhost/xvwa
 
 
 The first thing you need to do is to go to Setup / Reset menu and click on Submit / Reset button. This will prepare the database.
