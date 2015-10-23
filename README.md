@@ -2,7 +2,7 @@ tuxotron xvwa docker image
 =================
 
 This is an image to run xvwa in a docker container.
-xvwa is a (intentionally) (Xtreme Vulnerable Web Application)[https://github.com/s4n7h0/xvwa].
+xvwa is a (intentionally) [Xtreme Vulnerable Web Application](https://github.com/s4n7h0/xvwa]).
 
 
 Running the image
