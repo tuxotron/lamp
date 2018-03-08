@@ -21,10 +21,10 @@ The first thing you need to do is to go to Setup / Reset menu and click on Submi
 
 To stop the container:
 
-	sudo docker stop xvwa
+	 docker stop xvwa
 
 And to restart the same container:
 
-	sudo docker start xvwa
+	 docker start xvwa
 
 Enjoy!
