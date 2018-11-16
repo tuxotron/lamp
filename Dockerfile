@@ -28,7 +28,7 @@ ADD apache_default /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 
 RUN rm -fr /var/www/html
-RUN git clone https://github.com/s4n7h0/xvwa /var/www/html/xvwa
+RUN git clone https://github.com/s4n7h0/xvwa /var/www/html/xvwa .
 
 #Enviornment variables to configure php
 ENV PHP_UPLOAD_MAX_FILESIZE 10M
