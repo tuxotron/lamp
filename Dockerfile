@@ -11,6 +11,7 @@ RUN apt-get update && \
 ADD start-apache2.sh /start-apache2.sh
 ADD start-mysqld.sh /start-mysqld.sh
 ADD run.sh /run.sh
+ADD php.ini /php.ini
 RUN chmod 755 /*.sh
 ADD my.cnf /etc/mysql/conf.d/my.cnf
 ADD supervisord-apache2.conf /etc/supervisor/conf.d/supervisord-apache2.conf
@@ -28,7 +29,7 @@ ADD apache_default /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 
 RUN rm -fr /var/www/html
-RUN git clone https://github.com/s4n7h0/xvwa /var/www/html/xvwa
+RUN git clone https://github.com/s4n7h0/xvwa /var/www/html/xvwa .
 
 #Enviornment variables to configure php
 ENV PHP_UPLOAD_MAX_FILESIZE 10M
